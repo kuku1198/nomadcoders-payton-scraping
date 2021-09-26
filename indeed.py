@@ -32,7 +32,10 @@ def extract_indeed_jobs(last_page):
     results = job_card.find_all("div", {"class": "job_seen_beacon"})
 
     for result in results:
-        title = result.find("h2", {"class": "jobTitle"}).find("span").get('title')
-        print(title)
+        titles = result.find("h2", {"class": "jobTitle"}).find_all("span")
+        title = titles[0].get('title')
+
+        if title is None:
+            title = titles[1].get('title')
 
     return jobs
