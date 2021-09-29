@@ -9,18 +9,17 @@ from save import save_to_file
 # save_to_file(jobs)
 
 
-class Car():
+class Car:
     wheels = 4
     doors = 4
     windows = 4
     seats = 4
 
+    def start(self):
+        print(self.doors)
+        print("I started")
+
 
 porsche = Car()
-porsche.color = "Red"
-
-ferrari = Car()
-ferrari.color = "Yellow"
-
-mini = Car()
-mini.color = "White"
+porsche.color = "Red Sexy Red"
+porsche.start()
