@@ -9,12 +9,18 @@ from save import save_to_file
 # save_to_file(jobs)
 
 
-def plus(*args):
-    result = 0
-    for number in args:
-        result += number
+class Car():
+    wheels = 4
+    doors = 4
+    windows = 4
+    seats = 4
 
-    return result
 
+porsche = Car()
+porsche.color = "Red"
 
-plus(1, 2, 3, 4, 5, 6, 7, 8, 9)
+ferrari = Car()
+ferrari.color = "Yellow"
+
+mini = Car()
+mini.color = "White"
