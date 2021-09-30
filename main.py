@@ -22,8 +22,17 @@ class Car:
         return f"Car with {self.wheels} wheels"
 
 
-porche = Car(color="green", price="$40")
-print(porche.color, porche.price)
+class Convertible(Car):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.time = kwargs.get("time", 10)
 
-mini = Car()
-print(mini.color, mini.price)
+    def take_oof(self):
+        return "taking off"
+
+    def __str__(self):
+        return f"Car with no roof"
+
+
+porche = Convertible(color="green", price="$40")
+print(porche.color)
