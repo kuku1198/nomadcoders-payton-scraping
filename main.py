@@ -10,16 +10,20 @@ from save import save_to_file
 
 
 class Car:
-    wheels = 4
-    doors = 4
-    windows = 4
-    seats = 4
+    def __init__(self, *args, **kwargs):
+        self.wheels = 4
+        self.doors = 4
+        self.windows = 4
+        self.seats = 4
+        self.color = kwargs.get("color", "black")
+        self.price = kwargs.get("price", "$20")
 
-    def start(self):
-        print(self.doors)
-        print("I started")
+    def __str__(self):
+        return f"Car with {self.wheels} wheels"
 
 
-porsche = Car()
-porsche.color = "Red Sexy Red"
-porsche.start()
+porche = Car(color="green", price="$40")
+print(porche.color, porche.price)
+
+mini = Car()
+print(mini.color, mini.price)
